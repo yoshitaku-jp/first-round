@@ -6,9 +6,9 @@ const appRoom = consumer.subscriptions.create("EventChannel", {
   disconnected() {},
 
   received(data) {
-    console.log(data);
+    const messages = document.getElementById("messages");
 
-    return alert(data["message"]);
+    messages.insertAdjacentHTML("beforeend", data["message"]);
   },
 
   speak: function (message) {

@@ -2,9 +2,10 @@
   <h1 class="font-bold text-4xl">Events#show</h1>
   <p>Find me in app/views/events/show.html.erb</p>
 </div>
-<div id ='messages'>
+<div id ='messages', data-event_id="<%= @event_id %>">
+<%= @event_id %>
 </div>
 <form>
   <label>Say something:</label><br>
-  <input type="text" data-behavior="room_speaker">
+  <input type="text" data-behavior="event_speaker">
 </form>

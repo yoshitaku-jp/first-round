@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @event_id = params[:id]
+    @event_id = params[:event_uuid]
   end
 
   def create

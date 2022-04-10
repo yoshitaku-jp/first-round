@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
+  root to: 'home#index'
   
-  root to: 'events#show'
+  get 'home/index'
   resources :events, param: :uuid do
     resources :users, param: :user_name do
       resources :scores

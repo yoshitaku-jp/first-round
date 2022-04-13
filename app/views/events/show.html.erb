@@ -1,11 +1,10 @@
-<div>
-  <h1 class="font-bold text-4xl">Events#show</h1>
-  <p>Find me in app/views/events/show.html.erb</p>
-</div>
-<div id='messages' , data-event_id="<%= @event_id %>">
-  <%= @event_id %>
-</div>
+<div id='messages' , data-event_id="<%= @event_id %>"></div>
 <div data-controller="event">
   <div id='results'></div>
   <button data-action="event#clear_score">スコアをクリア</button>
+</div>
+
+<div class='text-lg mb-8'>
+  <button class='text-white bg-red-600 hover:text-red-600 hover:bg-white border-red-600 border rounded px-4
+    py-1'><%= link_to "ユーザを追加する", new_event_user_path(@event_id) %></button>
 </div>

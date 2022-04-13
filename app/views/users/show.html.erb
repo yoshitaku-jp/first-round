@@ -1,13 +1,7 @@
-<div>
-  <h1 class="font-bold text-4xl">Users#show</h1>
-  <p>Find me in app/views/users/show.html.erb</p>
-</div>
 <div id='messages' , data-event_id="<%= @event_id %>">
-  <%= @event_id %>
 </div>
 <div data-controller="event">
   <form>
-    <label>Say something:</label><br>
     <input id='text_score' data-event-target="text_score" type="text" data-behavior="event_speaker">
     <button data-action="event#send_score">スコアを送信</button>
   </form>

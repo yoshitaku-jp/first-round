@@ -1,9 +1,9 @@
-<div>
-  <h1 class="font-bold text-4xl">Events#new</h1>
-  <p>Find me in app/views/events/new.html.erb</p>
+<div class='container text-center'>
+  <div id='messages' , data-event_id="<%= @event_id %>">
+    <%= @event_id %>
+  </div>
+  <p class='text-lg mb-8'>URLをみんなに共有しよう！</p>
+
+  <input class='w-full mt-2 mb-6 px-4 py-2 border rounded-lg' id="uuid_url" value=<%= @uuid_url %>
+    onclick="this.select()" readonly="readonly" />
 </div>
-<div id='messages' , data-event_id="<%= @event_id %>">
-  <%= @event_id %>
-</div>
-<p>UUIDはこれ</p>
-<p><%= @uuid %></p>

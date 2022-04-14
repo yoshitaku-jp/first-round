@@ -1,8 +1,19 @@
 <div id='messages' , data-event_id="<%= @event_id %>">
 </div>
-<div data-controller="event">
-  <form>
-    <input id='text_score' data-event-target="text_score" type="text" data-behavior="event_speaker">
-    <button data-action="event#send_score">スコアを送信</button>
-  </form>
+<div class="w-full flex flex-col items-center" data-controller="event">
+  <div class="mb-10">
+    <label class='block text-gray-700 text-sm font-bold mb-2'>採点中のコンビは？</label>
+    <input class='border rounded-lg py-2 px-4 mx-4' id="target_name" readonly="readonly" value=<%= @target_name %> />
+  </div>
+
+  <div class="mb-4">
+    <label class='block text-gray-700 text-sm font-bold mb-2'>採点は？</label>
+    <input class='w-full px-2 py-2 border rounded-lg' type="text" id="text_score" data-event-target="text_score"
+      type="text" data-behavior="event_speaker" name="text_score" />
+  </div>
+  <div class='flex'>
+    <input class='border rounded-lg py-2 px-4 mx-4' id="uuid_url" value=<%= @user_name %> readonly="readonly" />
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      data-action="event#send_score">採点を送信</button>
+  </div>
 </div>

@@ -13,7 +13,13 @@ const user_channel = consumer.subscriptions.create(
         case "create":
           const results = document.getElementById("results");
           if (results != null) {
-            results.insertAdjacentHTML("beforeend", data["message"]);
+            results.insertAdjacentHTML(
+              "beforeend",
+              `<div class="mb-10">
+                 <input class='border rounded-lg py-2 px-4 mx-4' id="uuid_url" value=" ${data["message"]} " readonly="readonly" />
+                 <input class='border rounded-lg py-2 px-4 mx-4' id="uuid_url" value=" ${data["message"]} " readonly="readonly" />
+                </div>`
+            );
           }
           break;
         case "delete":

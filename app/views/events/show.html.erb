@@ -1,10 +1,18 @@
 <div id='messages' , data-event_id="<%= @event_id %>"></div>
-<div data-controller="event">
-  <div id='results'></div>
-  <button data-action="event#clear_score">スコアをクリア</button>
-</div>
-
-<div class='text-lg mb-8'>
-  <button class='text-white bg-red-600 hover:text-red-600 hover:bg-white border-red-600 border rounded px-4
-    py-1'><%= link_to "ユーザを追加する", new_event_user_path(@event_id) %></button>
+<div class="w-full flex flex-col items-center" data-controller="event">
+  <div class="mb-4">
+    <div class='inline-flex'>
+      <label class='text-gray-700 text-md font-bold pt-6 mr-2'>合計は</label>
+      <input class='px-2 py-2 border rounded-lg' type="text" id="total_score" data-event-target="total_score"
+        type="text" name="total_score" />
+      <label class='text-gray-700 text-md font-bold pt-6 ml-2'>点</label>
+    </div>
+  </div>
+  <div class='flex mb-4' id='results'></div>
+  <div class='flex'>
+    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mx-4 rounded"
+      data-action="event#clear_score">次のコンビへ</button>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-4 rounded"
+      data-action="event#sum_score">JUDGE</button>
+  </div>
 </div>

@@ -1,14 +1,14 @@
 <div id='messages' , data-event_id="<%= @event_id %>"></div>
 <div class="w-full flex flex-col items-center" data-controller="event">
   <div class="mb-4">
-    <label class='block text-gray-700 text-sm font-bold mb-2'>合計は</label>
     <div class='inline-flex'>
-      <input class='w-full px-2 py-2 border rounded-lg' type="text" id="text_score" data-event-target="text_score"
-        type="text" data-behavior="event_speaker" name="text_score" />
-      <label class='text-gray-700 text-md font-bold pt-6 mx-2'>点</label>
+      <label class='text-gray-700 text-md font-bold pt-6 mr-2'>合計は</label>
+      <input class='px-2 py-2 border rounded-lg' type="text" id="text_score" data-event-target="text_score" type="text"
+        data-behavior="event_speaker" name="text_score" />
+      <label class='text-gray-700 text-md font-bold pt-6 ml-2'>点</label>
     </div>
   </div>
-  <div class='flex' id='results'></div>
+  <div class='flex mb-4' id='results'></div>
   <div class='flex'>
     <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mx-4 rounded"
       data-action="event#clear_score">採点の開始</button>

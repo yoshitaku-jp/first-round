@@ -12,7 +12,8 @@
       type="text" data-behavior="event_speaker" name="text_score" />
   </div>
   <div class='flex'>
-    <input class='border rounded-lg py-2 px-4 mx-4' id="uuid_url" value=<%= @user_name %> readonly="readonly" />
+    <input class='border rounded-lg py-2 px-4 mx-4' id="user_name" data-event-target="user_name" value=<%= @user_name %>
+      readonly="readonly" />
     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       data-action="event#send_score">採点を送信</button>
   </div>

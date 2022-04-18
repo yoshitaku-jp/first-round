@@ -9,11 +9,13 @@ export default class extends Controller {
   }
 
   send_score() {
-    const element = this.text_scoreTarget;
-    const text_score = element.value;
     const type = "create";
 
-    this.channel.user_speak(text_score, type);
+    const user_info = {};
+    user_info.score = this.text_scoreTarget.value;
+    user_info.user_name = this.user_nameTarget.value;
+
+    this.channel.user_speak(type, user_info);
   }
   clear_score() {
     const type = "delete";

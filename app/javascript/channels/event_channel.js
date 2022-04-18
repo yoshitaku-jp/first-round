@@ -13,12 +13,17 @@ const user_channel = consumer.subscriptions.create(
         case "create":
           const results = document.getElementById("results");
           if (results != null) {
+            const user_info = data["user_info"];
             results.insertAdjacentHTML(
               "beforeend",
-              `<div class="mb-10">
-                 <input class='border rounded-lg py-2 px-4 mx-4' id="uuid_url" value=" ${data["message"]} " readonly="readonly" />
-                 <input class='border rounded-lg py-2 px-4 mx-4' id="uuid_url" value=" ${data["message"]} " readonly="readonly" />
-                </div>`
+              `<div class="flex flex-col items-center mb-10">
+                <div class="mb-4">
+                  <input class='invisible border rounded-lg py-2 px-4 mx-4' id="uuid_url" value="${user_info["score"]}" readonly="readonly" />
+                </div>
+                <div>
+                  <p class='py-2 px-4 mx-4' id="user_name"/>${user_info["user_name"]}</p>
+                </div>
+              </div>`
             );
           }
           break;
@@ -30,17 +35,17 @@ const user_channel = consumer.subscriptions.create(
           break;
       }
     },
-    user_speak(message, type, event_id) {
+    user_speak(type, user_info, event_id) {
       return this.perform("user_speak", {
-        message: message,
         type: type,
+        user_info: user_info,
         event_id: event_id,
       });
     },
     clear_score(type, event_id) {
       return this.perform("clear_score", {
-        message: "スコアを入力してください",
         type: type,
+        message: "スコアを入力してください",
         event_id: event_id,
       });
     },

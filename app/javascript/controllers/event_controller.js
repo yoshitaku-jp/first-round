@@ -23,9 +23,11 @@ export default class extends Controller {
     this.channel.clear_score(type);
   }
 
-  sum_score() {
-    console.log("sum score start");
-    this.total_scoreTarget.value = "100";
-    console.log("sum score end");
+  sum_score(elements) {
+    let total_score = 0;
+    for (let i = 0; i < elements.length; i++) {
+      total_score = total_score + Number(elements.item(i).value);
+    }
+    this.total_scoreTarget.value = total_score;
   }
 }

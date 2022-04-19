@@ -23,6 +23,13 @@ export default class extends Controller {
     this.channel.clear_score(type);
   }
 
+
+  remove_invisible(elements) {
+    Array.prototype.forEach.call(elements, function (element) {
+      element.classList.remove("invisible");
+    });
+  }
+
   sum_score(elements) {
     let total_score = 0;
     for (let i = 0; i < elements.length; i++) {

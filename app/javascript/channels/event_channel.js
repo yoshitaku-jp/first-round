@@ -16,12 +16,12 @@ const user_channel = consumer.subscriptions.create(
             const user_info = data["user_info"];
             results.insertAdjacentHTML(
               "beforeend",
-              `<div class="flex flex-col items-center mb-10">
+              `<div class="result flex flex-col items-center mb-10">
                 <div class="mb-4">
-                  <input class='invisible border rounded-lg py-2 px-4 mx-4' id="uuid_url" value="${user_info["score"]}" readonly="readonly" />
+                  <input class='score invisible border rounded-lg py-2 px-4 mx-4' value="${user_info["score"]}" readonly="readonly" />
                 </div>
                 <div>
-                  <p class='py-2 px-4 mx-4' id="user_name"/>${user_info["user_name"]}</p>
+                  <p class='py-2 px-4 mx-4'/>${user_info["user_name"]}</p>
                 </div>
               </div>`
             );

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     @event_id = params[:event_uuid]
     @user_name = params[:user_name]
+    @user_id = params[:user_id]
   end
 
   def new
@@ -13,6 +14,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    redirect_to event_user_url(event_uuid: params[:event_uuid],user_name: params[:user_name])
+    redirect_to event_user_url(event_uuid: params[:event_uuid], user_id: SecureRandom.urlsafe_base64(10), user_name: params[:user_name])
   end
 end

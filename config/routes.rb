@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   get 'home/index'
   resources :events, param: :uuid do
-    resources :users, param: :user_name do
+    resources :users, param: :user_id do
       resources :scores
     end
   end

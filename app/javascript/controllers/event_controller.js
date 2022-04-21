@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus";
 import event_channel from "../channels/event_channel";
 
 export default class extends Controller {
-  static targets = ["text_score", "user_name", "total_score"];
+  static targets = ["text_score", "user_name", "total_score", "event_url"];
 
   connect() {
     this.channel = event_channel;
@@ -41,5 +41,20 @@ export default class extends Controller {
       total_score = total_score + Number(elements.item(i).value);
     }
     this.total_scoreTarget.value = total_score;
+  }
+
+  create_event() {
+    const unique =
+      Date.now().toString(16) + Math.floor(Math.random() * 10).toString();
+    const event_url =
+      location.protocol +
+      "://" +
+      location.host +
+      "/events/" +
+      unique +
+      "/users";
+    console.log(event_url);
+
+    this.event_urlTarget.value = event_url;
   }
 }

@@ -1,24 +1,21 @@
-<div class='container'>
-  <div id='messages' , data-event_id="<%= @event_id %>">
-    <%= @event_id %>
-  </div>
+<div class='container' id='messages' , data-controller="event">
   <div class="w-full flex flex-col items-center">
-    <form method="post" action="/events">
-      <div class="mb-4 w-96">
-        <label class='block text-gray-700 text-sm font-bold mb-2'>イベント名</label>
-        <input class='w-full px-2 py-2 border rounded-lg' type="text" id="event_name" name="event_name" />
-      </div>
-      <div class='text-center'>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-8"
-          type="submit">イベント作成する</button>
-      </div>
-    </form>
+    <p class='text-xl mb-4'>イベントを作成しよう！</p>
+    <div class="mb-4 w-96">
+      <label class='block text-gray-700 text-sm font-bold mb-2'>イベント名</label>
+      <input class='w-full px-2 py-2 border rounded-lg' type="text" id="event_name" name="event_name"
+        placeholder="お笑い採点会場" />
+    </div>
+    <div class='text-center'>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-8"
+        data-action="event#create_event">イベントを作成する</button>
+    </div>
+    <%= image_tag('down_arrow.png',class: 'mx-auto mb-4 ') %>
     <div class="mb-4 w-96">
       <label class='block text-gray-700 text-sm font-bold mb-2'>イベントURL</label>
-      <input class='w-full px-2 py-2 border rounded-lg mb-4' id="uuid_url" onclick="this.select()" readonly="readonly"
-        value=<%= @uuid_url %> />
+      <input class='w-full px-2 py-2 border rounded-lg mb-4' id="event_url" onclick="this.select()" readonly="readonly"
+        data-event-target="event_url" value=<%= @event_url %> />
       <p class='text-center text-lg'>URLをみんなに共有しよう！</p>
     </div>
-
   </div>
 </div>

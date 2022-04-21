@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @event_id = params[:event_uuid]
   end
 
   def show

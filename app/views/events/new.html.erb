@@ -14,8 +14,12 @@
     <div class="mb-4 w-96">
       <label class='block text-gray-700 text-sm font-bold mb-2'>イベントURL</label>
       <input class='w-full px-2 py-2 border rounded-lg mb-4' id="event_url" onclick="this.select()" readonly="readonly"
-        data-event-target="event_url" value=<%= @event_url %> />
+        data-event-target="event_url" />
       <p class='text-center text-lg'>URLをみんなに共有しよう！</p>
+    </div>
+    <div class='text-center'>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-8"><a id="link" href=""
+          target="_blank" data-event-target="event_page">イベントページへ移動する</a></button>
     </div>
   </div>
 </div>
